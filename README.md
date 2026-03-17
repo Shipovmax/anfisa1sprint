@@ -1,9 +1,9 @@
-# Анфиса для друзей
+# Anfisa for Friends
 
-## Установка окружения 
-### Склонируйте проект «Анфиса для друзей» в папку *Dev/*.
+## Environment Setup
+### Clone the Anfisa for Friends project into the *Dev/* directory.
 
-Должна получиться такая структура:
+The resulting structure should look like this:
 
 ```
 Dev/
@@ -16,10 +16,10 @@ Dev/
      └── README.md
 ```
 
-### Создайте виртуальное окружение
+### Create a Virtual Environment
 
-1. Запустите редактор Visual Studio Code и через меню «*Файл» / «Открыть директорию»* откройте папку *Dev/anfisa1sprint/*. 
-2. Запустите терминал в VS Code, удостоверьтесь, что вы работаете из директории *anfisa1sprint/* (если вы работаете под Windows, убедитесь, что в терминале запущен Git Bash, а не PowerShell или что-нибудь ещё), и выполните команду:
+1. Open Visual Studio Code and use *File / Open Folder* to open the *Dev/anfisa1sprint/* directory.
+2. Open the terminal in VS Code, make sure you are working from the *anfisa1sprint/* directory, and run the command below. If you are using Windows, make sure the terminal is running Git Bash rather than PowerShell or another shell.
 - Linux/macOS
     
     ```bash
@@ -32,7 +32,7 @@ Dev/
     python -m venv venv
     ```
    
-В директории *anfisa1sprint/* будет развёрнуто виртуальное окружение и появится папка `venv`, в которой будут храниться все зависимости проекта, а структура файлов станет такой:
+This will create a virtual environment in the *anfisa1sprint/* directory and add a `venv` folder containing all project dependencies. The structure will look like this:
 
 ```
 
@@ -47,8 +47,8 @@ Dev/
     └── README.md
 ```
 
-### Активация виртуального окружения
-в терминале перейдите в корневую директорию проекта *Dev/anfisa1sprint/* и выполните команду:
+### Activate the Virtual Environment
+In the terminal, go to the project root directory *Dev/anfisa1sprint/* and run:
 - Linux/macOS
     
     ```bash
@@ -62,39 +62,37 @@ Dev/
     ```
     
 
-Теперь все команды в терминале будут предваряться строкой `(venv)`.
+After activation, all terminal commands will be prefixed with `(venv)`.
 
-💡 Все дальнейшие команды в терминале надо выполнять с активированным виртуальным окружением.
+All subsequent terminal commands should be run with the virtual environment activated.
 
-Обновите pip:
+Upgrade `pip`:
 
 ```bash
 python -m pip install --upgrade pip
 ```
 
-### Установка зависимостей из файла *requirements.txt*:
-Находясь в папке *Dev/anfisa1sprint/*, выполните команду:
+### Install Dependencies from *requirements.txt*
+From the *Dev/anfisa1sprint/* directory, run:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Применение миграций
+### Apply Migrations
 
-    
-В директории с файлом manage.py выполните команду: 
+From the directory containing `manage.py`, run:
 
 ```bash
 python manage.py migrate
 ```
 
-### Запуск проекта в dev-режиме
+### Run the Project in Development Mode
 
-    
-В директории с файлом manage.py выполните команду: 
+From the directory containing `manage.py`, run:
 
 ```bash
 python manage.py runserver
 ```
 
-В ответ Django сообщит, что сервер запущен и проект доступен по адресу [http://127.0.0.1:8000/](http://127.0.0.1:8000/). 
+Django will report that the server is running and the project is available at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
