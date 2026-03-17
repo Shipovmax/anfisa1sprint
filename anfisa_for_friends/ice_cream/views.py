@@ -3,20 +3,20 @@ from django.shortcuts import render
 ice_cream_catalog = [
     {
         'id': 0,
-        'title': 'Классический пломбир',
-        'description': 'Настоящее мороженое, для истинных ценителей вкуса. '
-                       'Если на столе появляется пломбир — это не надолго.',
+        'title': 'Classic sundae',
+        'description': 'Real ice cream for true flavor enthusiasts. '
+                       'If a sundae appears on the table, it will not last long.',
     },
     {
         'id': 1,
-        'title': 'Мороженое с кузнечиками',
-        'description': 'В колумбийском стиле: мороженое '
-                       'с добавлением настоящих карамелизованных кузнечиков.',
+        'title': 'Ice cream with grasshoppers',
+        'description': 'Colombian-style ice cream '
+                       'with real caramelized grasshoppers.',
     },
     {
         'id': 2,
-        'title': 'Мороженое со вкусом сыра чеддер',
-        'description': 'Вкус настоящего сыра в вафельном стаканчике.',
+        'title': 'Cheddar-flavored ice cream',
+        'description': 'The taste of real cheese in a waffle cone.',
     },
 ]
 
