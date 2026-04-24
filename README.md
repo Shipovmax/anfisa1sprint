@@ -1,98 +1,63 @@
 # Anfisa for Friends
 
-## Environment Setup
-### Clone the Anfisa for Friends project into the *Dev/* directory.
+A Django learning project from Yandex Backend Developer Course, Sprint 1 — three-app site with a homepage, about page, and ice cream catalog.
 
-The resulting structure should look like this:
+---
 
-```
-Dev/
- └── anfisa1sprint/
-     ├── anfisa_for_friends/
-     ├── html_templates/
-     ├── .gitignore
-     ├── LICENSE
-     ├── requirements.txt
-     └── README.md
-```
+## Apps
 
-### Create a Virtual Environment
+- **homepage** — landing page (`/`)
+- **about** — project description page (`/about/`)
+- **ice_cream** — catalog list (`/ice-cream/`) and detail pages (`/ice-cream/<id>/`); data stored as a hardcoded Python list (no DB)
 
-1. Open Visual Studio Code and use *File / Open Folder* to open the *Dev/anfisa1sprint/* directory.
-2. Open the terminal in VS Code, make sure you are working from the *anfisa1sprint/* directory, and run the command below. If you are using Windows, make sure the terminal is running Git Bash rather than PowerShell or another shell.
-- Linux/macOS
-    
-    ```bash
-    python3 -m venv venv
-    ```
-    
-- Windows
-    
-    ```python
-    python -m venv venv
-    ```
-   
-This will create a virtual environment in the *anfisa1sprint/* directory and add a `venv` folder containing all project dependencies. The structure will look like this:
+---
 
-```
+## Tech Stack
 
-Dev/
-└── anfisa1sprint/
-    ├── anfisa_for_friends/
-    ├── html_templates/
-    ├── venv/   
-    ├── .gitignore
-    ├── LICENSE
-    ├── requirements.txt
-    └── README.md
-```
+| | |
+|---|---|
+| Language | Python 3 |
+| Framework | Django 3.2 |
+| Frontend | Bootstrap 4 (bundled) |
+| Database | SQLite3 (default, unused) |
 
-### Activate the Virtual Environment
-In the terminal, go to the project root directory *Dev/anfisa1sprint/* and run:
-- Linux/macOS
-    
-    ```bash
-    source venv/bin/activate
-    ```
-    
-- Windows
-    
-    ```bash
-    source venv/Scripts/activate
-    ```
-    
+---
 
-After activation, all terminal commands will be prefixed with `(venv)`.
-
-All subsequent terminal commands should be run with the virtual environment activated.
-
-Upgrade `pip`:
+## Quick Start
 
 ```bash
-python -m pip install --upgrade pip
-```
+git clone https://github.com/Shipovmax/anfisa1sprint
+cd anfisa1sprint
 
-### Install Dependencies from *requirements.txt*
-From the *Dev/anfisa1sprint/* directory, run:
-
-```bash
+python3 -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-```
 
-### Apply Migrations
-
-From the directory containing `manage.py`, run:
-
-```bash
+cd anfisa_for_friends
 python manage.py migrate
-```
-
-### Run the Project in Development Mode
-
-From the directory containing `manage.py`, run:
-
-```bash
 python manage.py runserver
 ```
 
-Django will report that the server is running and the project is available at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+Site at `http://127.0.0.1:8000/`
+
+---
+
+## Project Structure
+
+```
+anfisa1sprint/
+├── anfisa_for_friends/     # Django project root
+│   ├── homepage/           # Landing page
+│   ├── about/              # About page
+│   ├── ice_cream/          # Catalog (list + detail views)
+│   ├── templates/          # HTML templates per app
+│   └── static_dev/         # CSS, images
+├── html_templates/         # Original static HTML mockups
+└── requirements.txt
+```
+
+---
+
+## Author
+
+- GitHub: [Shipovmax](https://github.com/Shipovmax)
+- Email: shipov.max@icloud.com
