@@ -1,6 +1,16 @@
+from typing import TypedDict
+
+from django.http import Http404, HttpRequest, HttpResponse
 from django.shortcuts import render
 
-ice_cream_catalog = [
+
+class IceCream(TypedDict):
+    id: int
+    title: str
+    description: str
+
+
+ice_cream_catalog: list[IceCream] = [
     {
         'id': 0,
         'title': 'Classic sundae',
@@ -21,13 +31,24 @@ ice_cream_catalog = [
 ]
 
 
-def ice_cream_detail(request, pk):
+def ice_cream_detail(request: HttpRequest, pk: int) -> HttpResponse:
+    """Render a single catalog entry by index.
+
+    Raises:
+        Http404: if `pk` is out of range of the hardcoded catalog list
+            (previously an unhandled IndexError leaked as a 500 error).
+    """
     template = 'ice_cream/detail.html'
-    context = {'ice_cream': ice_cream_catalog[pk]}
+    try:
+        ice_cream = ice_cream_catalog[pk]
+    except IndexError:
+        raise Http404(f'Ice cream with id={pk} does not exist')
+    context = {'ice_cream': ice_cream}
     return render(request, template, context)
 
 
-def ice_cream_list(request):
+def ice_cream_list(request: HttpRequest) -> HttpResponse:
+    """Render the full ice cream catalog."""
     template = 'ice_cream/list.html'
     context = {'ice_cream_list': ice_cream_catalog}
     return render(request, template, context)
